@@ -39,7 +39,6 @@ namespace CryptoBotCore.Models
         public string exchange;
         public string side;
         public string type;
-        //public bool is_hidden=false;
         public NewOrderRequest(string nonce, string symbol, Double amount, Double price, OrderExchange exchange, OrderSide side, OrderType type)
         {
             this.symbol = symbol;
@@ -59,8 +58,7 @@ namespace CryptoBotCore.Models
 
         public static NewOrderResponse FromJSON(string response)
         {
-            NewOrderResponse resp = JsonSerializer.Deserialize<NewOrderResponse>(response);
-            return resp;
+            return JsonSerializer.Deserialize<NewOrderResponse>(response);
         }
     }
     public class EnumHelper
@@ -74,10 +72,8 @@ namespace CryptoBotCore.Models
                 enumStr.Add(OrderExchange.All, "all");
                 enumStr.Add(OrderExchange.Bitfinex, "bitfinex");
                 enumStr.Add(OrderExchange.Bitstamp, "bitstamp");
-
                 enumStr.Add(OrderSide.Buy, "buy");
                 enumStr.Add(OrderSide.Sell, "sell");
-
                 enumStr.Add(OrderType.MarginLimit, "limit");
                 enumStr.Add(OrderType.MarginMarket, "market");
                 enumStr.Add(OrderType.MarginStop, "stop");
@@ -94,6 +90,5 @@ namespace CryptoBotCore.Models
         {
             return Get()[enumItem];
         }
-
     }
 }
