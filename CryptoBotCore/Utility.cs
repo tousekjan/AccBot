@@ -13,9 +13,9 @@ namespace CryptoBotCore
             return dateTo - dateFrom;
         }
 
-        public static Double getUnixTimestamps(DateTime time)
+        public static long GetUnixTimestamps()
         {
-            return (time.Subtract(new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc))).TotalMilliseconds;
+            return DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
         }
 
         public static DateTime getDateTimeFromUnixTimestamp(Double unixTimeStamp)

@@ -60,7 +60,7 @@ namespace CryptoBotCore.API
 
             public Nonce()
             {
-                Number = (long)Utility.getUnixTimestamps(DateTime.UtcNow);
+                Number = Utility.GetUnixTimestamps();
             }
         }
 
@@ -137,7 +137,7 @@ namespace CryptoBotCore.API
                     }
                     else
                     {
-                        return Utility.getUnixTimestamps(DateTime.UtcNow).ToString();
+                        return Utility.GetUnixTimestamps().ToString();
                     }
                 }
                 catch (Exception ex)
@@ -252,7 +252,7 @@ namespace CryptoBotCore.API
                     }
                     else
                     {
-                        return Utility.getUnixTimestamps(DateTime.UtcNow).ToString();
+                        return Utility.GetUnixTimestamps().ToString();
                     }
                 }
                 catch (Exception ex)
